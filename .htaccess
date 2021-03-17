@@ -1,0 +1,11 @@
+<Ifmodule mod_rewrite.c>
+# Activar mod_rewrite
+RewriteEngine on
+ErrorDocument 404 http://localhost/php/PRUEBA_MOMSEGUROS/consumir_API_typicode/error/
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+
+</Ifmodule>
